@@ -26,3 +26,16 @@ Similar to llama2_test.ipynb, using a different model: [codellama-13b.ggmlv3.Q5_
 
 ### [CodeLlama_7B_GGUF_Llama_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/CodeLlama_7B_GGUF_Llama_cpp_test.ipynb)
 Just the shell commands to download and run [CodeLlama_7B_GGUF](https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/) with [Llama.cpp](https://github.com/ggerganov/llama.cpp) in interactive mode.
+
+### [rlm2_q5km_gguf_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rlm2_q5km_gguf_test.ipynb)
+Similar to llama2_test.ipynb, using a different model: [rlm2_q5km.gguf](https://huggingface.co/jankovicsandras/Llama-2-13b-chat-norwegian-Q5_K_M-GGUF)
+. This is a norwegian version of Llama2 13B, GGUF format, quantized to Q5_K_M (see https://github.com/ggerganov/llama.cpp).
+
+Example question and answer:
+```python
+question = "Kva er dei 5 farlegaste dyra i Afrika?"
+```
+
+```
+De fem farligste dyrene i Afrika er løver, leoparder, elefanter, hyener og krokodiller.
+```
