@@ -1,4 +1,4 @@
-# ML test
+# ML
 
 
 ### [llama2_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/llama2_test.ipynb)
