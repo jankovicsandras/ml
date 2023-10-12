@@ -39,3 +39,34 @@ question = "Kva er dei 5 farlegaste dyra i Afrika?"
 ```
 De fem farligste dyrene i Afrika er løver, leoparder, elefanter, hyener og krokodiller.
 ```
+
+### [lc_hf_BERT.ipynb](https://github.com/jankovicsandras/ml/blob/main/lc_hf_BERT.ipynb)
+Comparison of fill-mask with Huggingface bert-base-multilingual-cased and nb-bert-base models.
+
+Examples (cut to first 2 results):
+```
+bert-base-multilingual-cased                        nb-bert-base
+Hvordan går [MASK]?                                 Hvordan går [MASK]?
+? 0.05671808868646622                               det 0.7175660729408264
+det 0.040497686713933945                            du 0.01880013197660446
+
+Det er [MASK] i dag.                                Det er [MASK] i dag.
+det 0.16041837632656097                             verre 0.05127672478556633
+ikke 0.05124184861779213                            manana 0.034877367317676544
+
+Kroppstemperatur på 40 grader betyr [MASK].         Kroppstemperatur på 40 grader betyr [MASK].
+null 0.023636769503355026                           nada 0.2990809381008148
+tilsvarende 0.017484165728092194                    mye 0.1012713685631752
+
+[MASK] er veldig fin.                               [MASK] er veldig fin.
+Den 0.2882879972457886                              Den 0.18935281038284302
+Det 0.06573046743869781                             Han 0.13225464522838593
+
+Jeg liker å [MASK].                                 Jeg liker å [MASK].
+være 0.07584870606660843                            danse 0.25082850456237793
+han 0.020002491772174835                            spille 0.14404089748859406
+
+Hva kan du seie om [MASK]?                          Hva kan du seie om [MASK]?
+om 0.02956273779273033                              det 0.09066858887672424
+ting 0.020101193338632584                           saka 0.02837744727730751
+```
