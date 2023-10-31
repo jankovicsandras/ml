@@ -70,3 +70,34 @@ Hva kan du seie om [MASK]?                          Hva kan du seie om [MASK]?
 om 0.02956273779273033                              det 0.09066858887672424
 ting 0.020101193338632584                           saka 0.02837744727730751
 ```
+
+### [rwkv_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rwkv_cpp_test.ipynb)
+Testing [RWKV-LM](https://github.com/BlinkDL/RWKV-LM) / [rwkv.cpp](https://github.com/saharNooby/rwkv.cpp) , using the [RWKV-4-World-3B... model](https://huggingface.co/BlinkDL/rwkv-4-world/tree/main) quantized to Q5_1. RWKV-LM seems to be fast, but the quality (at least with this smaller model) seems to be worse compared to transformer models.
+
+Example:
+```
+> User: Hva heter fargene i regnbue?
+> Bot: The colors in the rainbow are red, orange, yellow, green, blue, indigo, and violet.
+
+> User: 
+> Bot: Hello! How can I assist you today?
+
+> User: Hva er 3+2?
+> Bot: 3+2 = 5.
+
+> User: Hva er 7*6+5*4?
+> Bot: 7*6+5*4 = 35.
+
+> User: How many days are there in three weeks?
+> Bot: There are 14 days in three weeks.
+
+> User: Write a poem about reindeers.
+> Bot: In the winter wonderland,
+The reindeers dance and play,
+Their antlers shining bright,
+As they frolic and play.
+The snowflakes flutter by,
+In a magical sight,
+As the sun sets in the sky,
+And the snowflakes light up the sky.
+```
