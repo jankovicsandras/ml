@@ -1,44 +1,65 @@
 # ML
 
+### Machine Learning, LLM and other Jupyter Notebooks and resources
+##### (Newest on top)
 
-### [llama2_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/llama2_test.ipynb)
-This is a minimal demo of [LLM question answering](https://en.wikipedia.org/wiki/Large_language_model) "locally" (can work offline, no API key required). Implemented in [Google Colab](https://en.wikipedia.org/wiki/Google_Colab), using [LangChain](https://en.wikipedia.org/wiki/LangChain) and this [Llama2](https://en.wikipedia.org/wiki/LLaMA) model: [huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q2_K.bin](huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q2_K.bin) . This works in the free version of Google Colab (as of aug. 2023). Downloading the model takes ca. 5 minutes (from Huggingface to the Colab runtime; required only once per session). Question answering takes ca. 2 minutes.
+----
 
-Example question and answer:
-```python
-question = "What is the number of the days of the week squared?"
+### [emscripten_wasm_vectordb.ipynb](https://github.com/jankovicsandras/ml/blob/main/emscripten_wasm_vectordb.ipynb)
+
+Webassembly vectordb test. Python test database -> embedding with all-MiniLM-L6-v2 -> building C vectordb program -> Emscripten Wasm compiling -> Python testing with calling Wasmtime.
+
+----
+
+### [LazierMergekit.ipynb](https://github.com/jankovicsandras/ml/blob/main/LazierMergekit.ipynb)
+
+LazyMergekit can create a new LLM by merging weights. LazierMergekit adds Llama.cpp quantization.
+Example LLM created with this: [Mindentural-7B-240124](https://huggingface.co/jankovicsandras/Mindentural-7B-240124)
+
+----
+
+### [phi2_all_MiniLM_L6_v2_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/phi2_all_MiniLM_L6_v2_test.ipynb)
+### [dolphin_phi2_all_MiniLM_L6_v2_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/dolphin_phi2_all_MiniLM_L6_v2_test.ipynb)
+
+Testing RAG with:
+ - Phi-2 and Dolphin Phi-2 LLMs
+ - FAISS and a simple custom vectordb
+ - embedding model: all-MiniLM-L6-v2
+
+----
+
+### [rwkv_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rwkv_cpp_test.ipynb)
+Testing [RWKV-LM](https://github.com/BlinkDL/RWKV-LM) / [rwkv.cpp](https://github.com/saharNooby/rwkv.cpp) , using the [RWKV-4-World-3B... model](https://huggingface.co/BlinkDL/rwkv-4-world/tree/main) quantized to Q5_1. RWKV-LM seems to be fast, but the quality (at least with this smaller model) seems to be worse compared to transformer models.
+
+Example:
+```
+> User: Hva heter fargene i regnbue?
+> Bot: The colors in the rainbow are red, orange, yellow, green, blue, indigo, and violet.
+
+> User: 
+> Bot: Hello! How can I assist you today?
+
+> User: Hva er 3+2?
+> Bot: 3+2 = 5.
+
+> User: Hva er 7*6+5*4?
+> Bot: 7*6+5*4 = 35.
+
+> User: How many days are there in three weeks?
+> Bot: There are 14 days in three weeks.
+
+> User: Write a poem about reindeers.
+> Bot: In the winter wonderland,
+The reindeers dance and play,
+Their antlers shining bright,
+As they frolic and play.
+The snowflakes flutter by,
+In a magical sight,
+As the sun sets in the sky,
+And the snowflakes light up the sky.
 ```
 
-```
-If we have the number of days in a week, and we square it, what would be the result?
-
-Let's start with the assumption that there are 7 days in a week.
-
-If we take 7 and square it, we get:
-
-7^2 = 7 × 7 = 49
-
-So, the number of days in a week squared is 49.
-```
-
-### [codellama-12b.ggmlv3.Q5_K_M.bin-test.ipynb](https://github.com/jankovicsandras/ml/blob/main/codellama_12b_ggmlv3_Q5_K_M_bin_test.ipynb)
-Similar to llama2_test.ipynb, using a different model: [codellama-13b.ggmlv3.Q5_K_M.bin](https://huggingface.co/TheBloke/CodeLlama-13B-GGML/resolve/main/codellama-13b.ggmlv3.Q5_K_M.bin)
-
-### [CodeLlama_7B_GGUF_Llama_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/CodeLlama_7B_GGUF_Llama_cpp_test.ipynb)
-Just the shell commands to download and run [CodeLlama_7B_GGUF](https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/) with [Llama.cpp](https://github.com/ggerganov/llama.cpp) in interactive mode.
-
-### [rlm2_q5km_gguf_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rlm2_q5km_gguf_test.ipynb)
-Similar to llama2_test.ipynb, using a different model: [rlm2_q5km.gguf](https://huggingface.co/jankovicsandras/Llama-2-13b-chat-norwegian-Q5_K_M-GGUF)
-. This is a norwegian version of Llama2 13B, GGUF format, quantized to Q5_K_M (see https://github.com/ggerganov/llama.cpp).
-
-Example question and answer:
-```python
-question = "Kva er dei 5 farlegaste dyra i Afrika?"
-```
-
-```
-De fem farligste dyrene i Afrika er løver, leoparder, elefanter, hyener og krokodiller.
-```
+----
 
 ### [lc_hf_BERT.ipynb](https://github.com/jankovicsandras/ml/blob/main/lc_hf_BERT.ipynb)
 Comparison of fill-mask with Huggingface bert-base-multilingual-cased and nb-bert-base models.
@@ -71,33 +92,54 @@ om 0.02956273779273033                              det 0.09066858887672424
 ting 0.020101193338632584                           saka 0.02837744727730751
 ```
 
-### [rwkv_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rwkv_cpp_test.ipynb)
-Testing [RWKV-LM](https://github.com/BlinkDL/RWKV-LM) / [rwkv.cpp](https://github.com/saharNooby/rwkv.cpp) , using the [RWKV-4-World-3B... model](https://huggingface.co/BlinkDL/rwkv-4-world/tree/main) quantized to Q5_1. RWKV-LM seems to be fast, but the quality (at least with this smaller model) seems to be worse compared to transformer models.
+----
 
-Example:
+### [rlm2_q5km_gguf_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/rlm2_q5km_gguf_test.ipynb)
+Similar to llama2_test.ipynb, using a different model: [rlm2_q5km.gguf](https://huggingface.co/jankovicsandras/Llama-2-13b-chat-norwegian-Q5_K_M-GGUF)
+. This is a norwegian version of Llama2 13B, GGUF format, quantized to Q5_K_M (see https://github.com/ggerganov/llama.cpp).
+
+Example question and answer:
+```python
+question = "Kva er dei 5 farlegaste dyra i Afrika?"
 ```
-> User: Hva heter fargene i regnbue?
-> Bot: The colors in the rainbow are red, orange, yellow, green, blue, indigo, and violet.
 
-> User: 
-> Bot: Hello! How can I assist you today?
-
-> User: Hva er 3+2?
-> Bot: 3+2 = 5.
-
-> User: Hva er 7*6+5*4?
-> Bot: 7*6+5*4 = 35.
-
-> User: How many days are there in three weeks?
-> Bot: There are 14 days in three weeks.
-
-> User: Write a poem about reindeers.
-> Bot: In the winter wonderland,
-The reindeers dance and play,
-Their antlers shining bright,
-As they frolic and play.
-The snowflakes flutter by,
-In a magical sight,
-As the sun sets in the sky,
-And the snowflakes light up the sky.
 ```
+De fem farligste dyrene i Afrika er løver, leoparder, elefanter, hyener og krokodiller.
+```
+
+----
+
+### [CodeLlama_7B_GGUF_Llama_cpp_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/CodeLlama_7B_GGUF_Llama_cpp_test.ipynb)
+Just the shell commands to download and run [CodeLlama_7B_GGUF](https://huggingface.co/TheBloke/CodeLlama-7B-GGUF/) with [Llama.cpp](https://github.com/ggerganov/llama.cpp) in interactive mode.
+
+----
+
+### [codellama-12b.ggmlv3.Q5_K_M.bin-test.ipynb](https://github.com/jankovicsandras/ml/blob/main/codellama_12b_ggmlv3_Q5_K_M_bin_test.ipynb)
+Similar to llama2_test.ipynb, using a different model: [codellama-13b.ggmlv3.Q5_K_M.bin](https://huggingface.co/TheBloke/CodeLlama-13B-GGML/resolve/main/codellama-13b.ggmlv3.Q5_K_M.bin)
+
+----
+
+### [llama2_test.ipynb](https://github.com/jankovicsandras/ml/blob/main/llama2_test.ipynb)
+This is a minimal demo of [LLM question answering](https://en.wikipedia.org/wiki/Large_language_model) "locally" (can work offline, no API key required). Implemented in [Google Colab](https://en.wikipedia.org/wiki/Google_Colab), using [LangChain](https://en.wikipedia.org/wiki/LangChain) and this [Llama2](https://en.wikipedia.org/wiki/LLaMA) model: [huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q2_K.bin](huggingface.co/TheBloke/Llama-2-13B-chat-GGML/resolve/main/llama-2-13b-chat.ggmlv3.q2_K.bin) . This works in the free version of Google Colab (as of aug. 2023). Downloading the model takes ca. 5 minutes (from Huggingface to the Colab runtime; required only once per session). Question answering takes ca. 2 minutes.
+
+Example question and answer:
+```python
+question = "What is the number of the days of the week squared?"
+```
+
+```
+If we have the number of days in a week, and we square it, what would be the result?
+
+Let's start with the assumption that there are 7 days in a week.
+
+If we take 7 and square it, we get:
+
+7^2 = 7 × 7 = 49
+
+So, the number of days in a week squared is 49.
+```
+
+
+
+
+
